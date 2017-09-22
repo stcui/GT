@@ -99,7 +99,9 @@
 
 
 @implementation GTBattery
-
+{
+    UIApplicationState _applicationState;
+}
 M_GT_DEF_SINGLETION( GTBattery )
 
 @synthesize lastCapacityDate = _lastCapacityDate;
@@ -119,6 +121,10 @@ M_GT_DEF_SINGLETION( GTBattery )
         GT_OUT_HISTORY_CHECKED_SET("Battery", true);
         GT_OC_OUT_VC_SET(@"Battery", @"GTBatteryDetailBoard");
         GT_OC_OUT_DELEGATE_SET(@"Battery", self);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _applicationState = [UIApplication sharedApplication].applicationState;
+            [[UIApplication sharedApplication] addObserver:self forKeyPath:@"applicationState" options:NSKeyValueObservingOptionNew context:NULL];
+        });
     }
     
     return self;
@@ -126,6 +132,9 @@ M_GT_DEF_SINGLETION( GTBattery )
 
 - (void)dealloc
 {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] removeObserver:self forKeyPath:@"applicationState"];
+    });
     [self powerMgrRelease];
     
     M_GT_SAFE_FREE(_item);
@@ -194,9 +203,9 @@ M_GT_DEF_SINGLETION( GTBattery )
 - (int)batteryLevel
 {
     @try {
-        UIApplication *app = [UIApplication sharedApplication];
-        if (app.applicationState == UIApplicationStateActive) {
+        if (_applicationState == UIApplicationStateActive) {
             void *result = nil;
+            UIApplication *app = [UIApplication sharedApplication];
             object_getInstanceVariable(app, "_statusBar", &result);
             id status  = result;
             for (id a in [status subviews]) {
@@ -292,6 +301,14 @@ M_GT_DEF_SINGLETION( GTBattery )
     }
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context {
+    if (object == [UIApplication sharedApplication] && [keyPath isEqualToString:@"applicationState"]) {
+        _applicationState = [UIApplication sharedApplication].applicationState;
+    }
+}
 
 #pragma mark - GTParaDelegate
 
