@@ -1934,11 +1934,7 @@
 				INFOPLIST_FILE = "GT/GT-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Lib",
-					"$(PROJECT_DIR)/Lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -1974,11 +1970,7 @@
 				INFOPLIST_FILE = "GT/GT-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Lib",
-					"$(PROJECT_DIR)/Lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;

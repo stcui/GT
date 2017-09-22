@@ -40,7 +40,6 @@
 #import "GTLang.h"
 #import "GTLangDef.h"
 #import "GTVersionDef.h"
-#import "GTMTA.h"
 
 #pragma mark -
 

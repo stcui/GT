@@ -34,7 +34,7 @@ returnCode=0
 # build styles
 #
 TARGET_LIST=(GT)
-CONFIG_LIST=(Debug)
+CONFIG_LIST=(Release)
 
 #
 # prepare build directories

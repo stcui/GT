@@ -41,8 +41,6 @@
 #import "GTLang.h"
 #import "GTLangDef.h"
 #import "GTVersionDef.h"
-#import "GTMTA.h"
-#import "GTMTAConfig.h"
 
 @implementation GTDebugConsole
 

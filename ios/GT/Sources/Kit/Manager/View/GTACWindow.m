@@ -49,8 +49,6 @@
 #import "GTProgressHUD.h"
 #import "GTLang.h"
 #import "GTLangDef.h"
-#import "GTMTA.h"
-
 
 
 #define M_GT_FONT_SIZE_22PX 11.0f

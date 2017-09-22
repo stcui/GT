@@ -11,7 +11,6 @@
 #import "GTDebugDef.h"
 #import "GTUIViewController.h"
 #import "GTUtility.h"
-#import "GTMTA.h"
 
 static GTTabBarController *g_gtTabBarController;
 

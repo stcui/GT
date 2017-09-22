@@ -50,7 +50,7 @@
 #else
 
 #include <stdbool.h>
-
+__BEGIN_DECLS
 //------------------------ FOR C Language BEGIN ------------------------
 /**
  * @brief   profile功能开关设置
@@ -168,7 +168,7 @@ extern double func_endRecTimeInThread(const char * logKey, const char * format,.
 #define GT_TIME_SAVE(...) func_saveRecTime(__VA_ARGS__)
 extern void func_saveRecTime(const char * format,...);
 //------------------------ FOR C Language END ------------------------
-
+__END_DECLS
 
 #endif
 
