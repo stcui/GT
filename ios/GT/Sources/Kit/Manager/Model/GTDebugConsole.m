@@ -103,13 +103,6 @@ M_GT_DEF_SINGLETION(GTDebugConsole);
     [GTNSLog sharedInstance];
     plugin = (GTPlugin *)[[[NSClassFromString(@"GTNSLogPlugin") alloc] init] autorelease];
     GT_PLUGIN_REGISTER(plugin);
-    
-    // 初始化GTMTA，用于事件上报
-    [GTMTA startWithAppkey:@"IP49TXV1MH9M"];
-    
-    // 调试使用
-//    [[GTMTAConfig getInstance] setReportStrategy:GTMTA_STRATEGY_APP_LAUNCH];
-    
 }
 
 

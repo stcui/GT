@@ -163,9 +163,6 @@
             NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:2];
             [dictionary setObject:appName forKey:@"appName"];
             [dictionary setObject:M_GT_VERSION forKey:@"sdkVersion"];
-            [GTMTA trackCustomKeyValueEvent:@"AUT" props:dictionary];
-            
-//            NSLog(@"report:%@", appName);
         }
         
     }

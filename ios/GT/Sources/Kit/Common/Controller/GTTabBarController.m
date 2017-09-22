@@ -54,14 +54,6 @@ static GTTabBarController *g_gtTabBarController;
         // 这里先设置_selectedIndex值，保证里面页面显示不做页面统计，第一次进入由这里进行统计
         _selectedIndex = index;
         [self setSelectedIndex:index];
-        
-        // 页面统计
-        GTUINavigationController *selectedVC = [self selectedViewController];
-        if ([selectedVC.viewControllers count] > 0) {
-            [GTMTA trackPageViewBegin:NSStringFromClass([[selectedVC.viewControllers objectAtIndex:0] class])];
-//            NSLog(@"trackPageViewBegin:%@", NSStringFromClass([[selectedVC.viewControllers objectAtIndex:0] class]));
-        }
-        
 	}
 	return self;
 }
@@ -109,13 +101,6 @@ static GTTabBarController *g_gtTabBarController;
 
 - (void)dealloc
 {
-    // 页面统计
-    GTUINavigationController *selectedVC = [self selectedViewController];
-    if ([selectedVC.viewControllers count] > 0) {
-        [GTMTA trackPageViewEnd:NSStringFromClass([[selectedVC.viewControllers objectAtIndex:0] class])];
-//        NSLog(@"trackPageViewEnd:%@", NSStringFromClass([[selectedVC.viewControllers objectAtIndex:0] class]));
-    }
-    
     _tabBar.delegate = nil;
 	[_tabBar release];
     
@@ -275,20 +260,6 @@ static GTTabBarController *g_gtTabBarController;
     [selectedVC viewDidAppear:YES];
 	
 //    NSLog(@"_selectedIndex:%lu index:%lu", (unsigned long)_selectedIndex, (unsigned long)index);
-    // 统计页面次数
-    if (_selectedIndex != index) {
-        if ([oldSelectedVC.viewControllers count] > 0) {
-            [GTMTA trackPageViewEnd:NSStringFromClass([[oldSelectedVC.viewControllers objectAtIndex:0] class])];
-//            NSLog(@"trackPageViewEnd:%@", NSStringFromClass([[oldSelectedVC.viewControllers objectAtIndex:0] class]));
-        }
-        
-        if ([selectedVC.viewControllers count] > 0) {
-            [GTMTA trackPageViewBegin:NSStringFromClass([[selectedVC.viewControllers objectAtIndex:0] class])];
-//            NSLog(@"trackPageViewBegin:%@", NSStringFromClass([[selectedVC.viewControllers objectAtIndex:0] class]));
-        }
-    }
-    
-    
     _selectedIndex = index;
     
     

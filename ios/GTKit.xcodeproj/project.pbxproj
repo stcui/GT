@@ -287,9 +287,6 @@
 		91F60D4718F68DA700FB35CA /* EULA.html in Resources */ = {isa = PBXBuildFile; fileRef = 91F60D4618F68DA700FB35CA /* EULA.html */; };
 		E942854A1C993B5C003B9967 /* UIScreen+Bounds.h in Headers */ = {isa = PBXBuildFile; fileRef = E94285481C993B5C003B9967 /* UIScreen+Bounds.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E942854B1C993B5C003B9967 /* UIScreen+Bounds.m in Sources */ = {isa = PBXBuildFile; fileRef = E94285491C993B5C003B9967 /* UIScreen+Bounds.m */; };
-		F874174A1B86CEC500CEBBA0 /* libmtasdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F87417471B86CEC500CEBBA0 /* libmtasdk.a */; };
-		F874174B1B86CEC500CEBBA0 /* GTMTA.h in Headers */ = {isa = PBXBuildFile; fileRef = F87417481B86CEC500CEBBA0 /* GTMTA.h */; };
-		F874174C1B86CEC500CEBBA0 /* GTMTAConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = F87417491B86CEC500CEBBA0 /* GTMTAConfig.h */; };
 		F87417511B86CF6100CEBBA0 /* GTList.h in Headers */ = {isa = PBXBuildFile; fileRef = F874174E1B86CF6100CEBBA0 /* GTList.h */; };
 		F87417521B86CF6100CEBBA0 /* GTList.m in Sources */ = {isa = PBXBuildFile; fileRef = F874174F1B86CF6100CEBBA0 /* GTList.m */; };
 		F87417551B86CF7F00CEBBA0 /* GTImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F87417531B86CF7F00CEBBA0 /* GTImage.h */; };
@@ -602,9 +599,6 @@
 		F874171F1B86C89900CEBBA0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F87417211B86C8A800CEBBA0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F87417231B86C8C000CEBBA0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		F87417471B86CEC500CEBBA0 /* libmtasdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmtasdk.a; sourceTree = "<group>"; };
-		F87417481B86CEC500CEBBA0 /* GTMTA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMTA.h; sourceTree = "<group>"; };
-		F87417491B86CEC500CEBBA0 /* GTMTAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMTAConfig.h; sourceTree = "<group>"; };
 		F874174E1B86CF6100CEBBA0 /* GTList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTList.h; sourceTree = "<group>"; };
 		F874174F1B86CF6100CEBBA0 /* GTList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTList.m; sourceTree = "<group>"; };
 		F87417531B86CF7F00CEBBA0 /* GTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTImage.h; sourceTree = "<group>"; };
@@ -618,7 +612,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F874174A1B86CEC500CEBBA0 /* libmtasdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +629,6 @@
 			isa = PBXGroup;
 			children = (
 				F8CE22541C33C72C00ECFBF0 /* LICENSE.TXT */,
-				91A9F40418387FD1004B911E /* Lib */,
 				91A9EFCF18385DA0004B911E /* GTResources */,
 				918C0AD51744BBD1005E6177 /* GT */,
 				91797ED6169E6C7E00C944D8 /* Frameworks */,
@@ -1424,16 +1416,6 @@
 			path = popview;
 			sourceTree = "<group>";
 		};
-		91A9F40418387FD1004B911E /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				F87417471B86CEC500CEBBA0 /* libmtasdk.a */,
-				F87417481B86CEC500CEBBA0 /* GTMTA.h */,
-				F87417491B86CEC500CEBBA0 /* GTMTAConfig.h */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
 		91C97EEF1839FDBA0059BBE6 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -1569,7 +1551,6 @@
 				F87417551B86CF7F00CEBBA0 /* GTImage.h in Headers */,
 				91A9F28E183870B4004B911E /* GTUITableView.h in Headers */,
 				91A9F2C1183870B5004B911E /* GTLog.h in Headers */,
-				F874174B1B86CEC500CEBBA0 /* GTMTA.h in Headers */,
 				91C97F101839FDBA0059BBE6 /* GTCrashFileHandler.h in Headers */,
 				91A9F280183870B4004B911E /* GTProgressHUD.h in Headers */,
 				91C97F141839FDBA0059BBE6 /* GTNSLogBoard.h in Headers */,
@@ -1605,7 +1586,6 @@
 				91A9F3FB18387E6A004B911E /* GTPopoverPopoverView.h in Headers */,
 				91A9F2FE183870B5004B911E /* GTSettingBoard.h in Headers */,
 				91C97F0C1839FDBA0059BBE6 /* GTCrashBoard.h in Headers */,
-				F874174C1B86CEC500CEBBA0 /* GTMTAConfig.h in Headers */,
 				91A9F2F8183870B5004B911E /* GTProfilerValue.h in Headers */,
 				91A9F2F2183870B5004B911E /* GTProfilerBoard.h in Headers */,
 				91A9F2A2183870B5004B911E /* GTBatteryDetailBoard.h in Headers */,

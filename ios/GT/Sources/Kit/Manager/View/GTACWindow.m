@@ -618,7 +618,6 @@ typedef enum {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHeaderSwitchUI:) name:M_GT_NOTIFICATION_AC_UPDATE object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateACSwitch) name:M_GT_NOTIFICATION_OUT_GW_UPDATE object:nil];
         
-        [GTMTA trackPageViewBegin:NSStringFromClass([self class])];
 //        NSLog(@"trackPageViewBegin:%@", NSStringFromClass([self class]));
     }
     return self;
@@ -727,7 +726,6 @@ typedef enum {
 {
     [self unload];
     
-    [GTMTA trackPageViewEnd:NSStringFromClass([self class])];
 //    NSLog(@"trackPageViewEnd:%@", NSStringFromClass([self class]));
     
     [super dealloc];
